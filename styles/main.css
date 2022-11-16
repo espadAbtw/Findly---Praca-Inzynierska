@@ -1,0 +1,24 @@
+.middle{
+   
+    height: 33vh;
+}
+.btn2{
+    width: 20vw;
+}
+.smalldiv {
+   
+    height: 33vh;
+}
+
+@media only screen and (max-width: 768px) {
+    .smalldiv {
+      display: none;
+      height: 33vh;
+    }
+    .middle{
+        height: 25vh;
+    }
+    .btn2{
+        width: 80vw;
+      }
+}

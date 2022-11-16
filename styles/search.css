@@ -1,0 +1,43 @@
+
+
+.simplecard{
+    padding: 5px;
+    margin: 4%;
+    background-color: rgb(221, 224, 222);
+    
+    border-radius: 16px;
+    width: 80%;
+    -webkit-box-shadow: 0px 0px 45px -18px rgba(144, 144, 144, 1);
+    -moz-box-shadow: 0px 0px 45px -18px rgba(144, 144, 144, 1);
+    box-shadow: 0px 0px 45px -18px rgba(144, 144, 144, 1);
+}
+.simpleInformation{
+    background-color: white;
+    border: 1px solid rgb(131, 130, 130);
+    border-radius: 8px;
+    margin:2px;
+    
+}
+.half{
+    margin-left: 5 !important;
+    margin-right: 5 !important;
+}
+.img1{
+    height: auto;
+    
+    width: 100%;
+    max-width: 15vw;
+    margin-bottom: 5px;
+}
+@media only screen and (max-width: 767px) {
+    .img1{
+        height: auto;
+        
+        width: 100%;
+        max-width: 40vw;
+        margin-bottom: 5px;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    
+  }
