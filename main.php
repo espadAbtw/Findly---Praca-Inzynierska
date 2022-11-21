@@ -4,14 +4,27 @@
     header("Location: login.php");
   }
  include_once "header.php"; 
+ include_once "./backend/config.php"; 
  
  ?>
 <?php
     include './static/navbar.php';
      ?>
-<body>
-    <div class="cointainer">
+      
+<body class="bodyHidden">
+<?php         
+         $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
+          if(mysqli_num_rows($sql) > 0){
+             $row = mysqli_fetch_assoc($sql);
+     }  ?>
+
+    <div class="cointainer ">
+    
         <div class="row">
+        <div class="content_main">
+    <h2>Witaj, <?php echo $row["fname"]; ?>!</h2>
+    <h2>Witaj, <?php echo $row["fname"]; ?>!</h2>
+  </div>
             <div class="col-sm-12 col-md-3  smalldiv" ></div>
             <div class="col-sm-12 col-md-3  smalldiv"></div>
             <div class="col-sm-12 col-md-3  smalldiv"></div>
@@ -20,10 +33,18 @@
         <div class="row">
             <div class="col-sm-12 col-md-3 middle"></div>
             <div class="col-sm-12 col-md-3 middle buttondiv d-flex justify-content-center align-items-center">
-            <a class="btn btn-primary" href="./search.php" role="button">Wyszukaj dopasowania</a>
-            </div>
+            <div class="mainButt">
+            <a class="buttonReg" href="./search.php" role="button"><span>Wyszukaj dopasowania</span>
+        <div class="wave"></div>
+        </a>
+            </div>    
+        </div>
             <div class="col-sm-12 col-md-3 middle buttondiv d-flex justify-content-center align-items-center">
-            <a class="btn btn-primary" href="./users.php" role="button">Wiadomosci</a>            </div>
+            <div class="mainButt">
+            <a class="buttonReg" href="./users.php" role="button"><span>Wiadomości</span>
+        <div class="wave"></div>
+        </a>
+            </div>          </div>
             <div class="col-sm-12 col-md-3 middle"></div>
         </div>
         <div class="row">

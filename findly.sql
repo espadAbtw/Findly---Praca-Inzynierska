@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2022 at 12:14 PM
+-- Generation Time: Nov 20, 2022 at 02:30 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.5
 
@@ -26,6 +26,33 @@ USE `findly`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `matching`
+--
+
+CREATE TABLE `matching` (
+  `match_id` int(255) NOT NULL,
+  `person_id` int(255) NOT NULL,
+  `matched_person_id` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `matching`
+--
+
+INSERT INTO `matching` (`match_id`, `person_id`, `matched_person_id`) VALUES
+(19, 1378700747, 1118853566),
+(20, 1378700747, 611784336),
+(21, 611784336, 1436829592),
+(22, 611784336, 1118853566),
+(23, 611784336, 1379293060),
+(24, 1436829592, 1378700747),
+(25, 1436829592, 1560753969),
+(26, 1436829592, 611784336),
+(27, 1436829592, 1185099212);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `messages`
 --
 
@@ -41,19 +68,10 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`) VALUES
-(1, 1556460564, 451695264, 'Siemka'),
-(2, 451695264, 1556460564, 'siemka'),
-(3, 1183901059, 1556460564, 'Czesc krzysiu!'),
-(4, 1556460564, 1183901059, 'Siema'),
-(5, 1556460564, 1183901059, 'Co tam kamil'),
-(6, 451695264, 1556460564, 'co tam mati'),
-(7, 1556460564, 451695264, 'A dobrze'),
-(8, 451695264, 1556460564, 'pogg'),
-(9, 451695264, 1556460564, 'Jest gucci'),
-(10, 451695264, 1556460564, 'Czat dziala'),
-(11, 1556460564, 451695264, 'Bez kitu'),
-(12, 451695264, 1556460564, 'Czesc Mati'),
-(13, 1556460564, 451695264, 'Czesc Kamil');
+(21, 1118853566, 1378700747, 'Czesc'),
+(22, 611784336, 1378700747, 'Czesc bartek!'),
+(23, 1436829592, 611784336, 'elo kasia'),
+(24, 611784336, 1436829592, 'witaj bartku');
 
 -- --------------------------------------------------------
 
@@ -76,23 +94,43 @@ CREATE TABLE `users` (
   `fb` varchar(255) NOT NULL,
   `twitter` varchar(255) NOT NULL,
   `dc` varchar(255) NOT NULL,
-  `status` varchar(255) NOT NULL
+  `status` varchar(255) NOT NULL,
+  `lol` tinyint(1) DEFAULT 0,
+  `cs` tinyint(1) DEFAULT 0,
+  `val` tinyint(1) DEFAULT 0,
+  `mc` tinyint(1) DEFAULT 0,
+  `horror` tinyint(1) DEFAULT 0,
+  `comedy` tinyint(1) DEFAULT 0,
+  `crime` tinyint(1) DEFAULT 0,
+  `drama` tinyint(1) DEFAULT 0,
+  `trap` tinyint(1) DEFAULT 0,
+  `rap` tinyint(1) DEFAULT 0,
+  `pop` tinyint(1) DEFAULT 0,
+  `classic` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `unique_id`, `fname`, `lname`, `email`, `password`, `img`, `about`, `age`, `gender`, `city`, `fb`, `twitter`, `dc`, `status`) VALUES
-(1, 451695264, 'Mati', 'Karas', 'mati@wp.pl', '123', '166842146746755173_320278885240292_437311010278211584_n.jpg', '', 18, 'Mezczyzna', '', '', '', '', 'Active now'),
-(43, 503216217, 'Oskar', 'Krawczyk', 'soso@gmail.com', 'test', '166842610018157298_112075029357514_5605455763134319300_n.png', '123123123123', 27, 'Mezczyzna', 'Krakow', 'https://www.facebook.com/oskar.krawczyk', 'https://twitter.com/grywan', 'Grywan#0132', 'Active now'),
-(44, 1183901059, 'Krzysiek', 'Zalog', 'bartek@gmail.com', '123', '166854780320150802_140114.jpg', 'czesc jestem bartek', 45, 'Mezczyzna', 'Radomsko', 'https://www.facebook.com/krzysztof', 'https://twitter.com/kristof', 'Krzychu#2137', 'Active now'),
-(46, 1556460564, 'Kamil', 'Gruchala', 'kamil@wp.pl', '123', '1668547736kamil.png', '', 18, 'Mezczyzna', '', '', '', '', 'Active now'),
-(48, 75081883, 'Mateusz', '', 'mati2@gmail.com', '123', '', '', 0, '', '', '', '', '', 'Active now');
+INSERT INTO `users` (`user_id`, `unique_id`, `fname`, `lname`, `email`, `password`, `img`, `about`, `age`, `gender`, `city`, `fb`, `twitter`, `dc`, `status`, `lol`, `cs`, `val`, `mc`, `horror`, `comedy`, `crime`, `drama`, `trap`, `rap`, `pop`, `classic`) VALUES
+(57, 1378700747, 'Mateusz', 'Karas', 'mati@gmail.com', '202cb962ac59075b964b07152d234b70', '1668948142IMG_20190419_120006 (1).jpg', 'Czesc jestem Mateusz, pisze inzyniera', 22, 'Mezczyzna', 'Czestochowa', 'facebook.com/mati', 'twitter.com/mati', 'mati#123', 'Offline now', 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0),
+(58, 1560753969, 'Michal', 'Nowak', 'michal@gmail.com', '202cb962ac59075b964b07152d234b70', '1668948456michal.jpg', 'Czesc jestem Michal i lubie placki', 24, 'Mezczyzna', 'Poznan', 'facebook.com/michal', 'twitter.com/michal', 'michal#1234', 'Offline now', 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1),
+(59, 611784336, 'Bartek', 'Nowak', 'bartek@gmail.com', '202cb962ac59075b964b07152d234b70', '1668948530bartek.jpg', 'Cześć jestem Bartek ', 18, 'Mezczyzna', 'Wrocław', 'facebook.com/bartek', 'twitter.com/bartek', 'bartek#1234', 'Offline now', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+(60, 1436829592, 'Kasia', 'Kowalska', 'kasia@gmail.com', '202cb962ac59075b964b07152d234b70', '1668948578kasia.jpg', 'Cześć jestem Kasia! ', 19, 'Kobieta', 'Kraków', 'facebook.com/kasia', 'twitter.com/kasia', 'Kasia#1243', 'Active now', 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1),
+(61, 1185099212, 'Sebastian', 'Załóg', 'seba@gmail.com', '202cb962ac59075b964b07152d234b70', '1668948649seba.jpg', 'Siema to ja seba', 18, 'Mezczyzna', 'Ciężkowice', 'facebook.com/seba', 'twitter.com/seba', 'Seba#1234', 'Offline now', 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1),
+(62, 1118853566, 'Zosia', '', 'zosia@gmail.com', '202cb962ac59075b964b07152d234b70', '1668948729zosia.jpg', 'Cześć jestem zosia.', 21, 'Kobieta', 'Warszawa', 'facebook.com/zosia', 'twitter.com/zosia', 'Zosia#4321', 'Offline now', 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0),
+(63, 1379293060, 'Karolina', 'Qwerty', 'karo@gmail.com', '202cb962ac59075b964b07152d234b70', '1668948929karolina.jpg', 'Cześć jestem Karolina', 30, 'Kobieta', 'Białystok', 'facebook.com/karo', 'twitter.com/karo', 'Karo#1234', 'Offline now', 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `matching`
+--
+ALTER TABLE `matching`
+  ADD PRIMARY KEY (`match_id`);
 
 --
 -- Indexes for table `messages`
@@ -111,16 +149,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `matching`
+--
+ALTER TABLE `matching`
+  MODIFY `match_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

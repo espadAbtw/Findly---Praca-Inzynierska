@@ -164,5 +164,121 @@ session_start();
 		    echo 'Link do twittera jest nieprawidlowy';
 	    }   
     }
- 
+    // Checkboxy
+    $checkboxy_zmiana = 0; 
+
+    if(isset($_POST['checkLOL'])){
+        $lol = 1;
+        $sqlLOL = mysqli_query($conn, "UPDATE users SET lol='{$lol}' WHERE unique_id ='{$unique_id}'");
+        $checkboxy_zmiana = 1 ;
+    } else {
+        $lol = 0;
+        $sqlLOL = mysqli_query($conn, "UPDATE users SET lol='{$lol}' WHERE unique_id ='{$unique_id}'");
+    }
+
+    if(isset($_POST['checkCS'])){
+        $cs = 1;
+        $sqlcs = mysqli_query($conn, "UPDATE users SET cs='{$cs}' WHERE unique_id ='{$unique_id}'");
+        $checkboxy_zmiana = 1 ;
+    } else {
+        $cs = 0;
+        $sqlcs = mysqli_query($conn, "UPDATE users SET cs='{$cs}' WHERE unique_id ='{$unique_id}'");
+    }
+
+    if(isset($_POST['checkVAL'])){
+        $val = 1;
+        $sqlval = mysqli_query($conn, "UPDATE users SET val='{$val}' WHERE unique_id ='{$unique_id}'");
+        $checkboxy_zmiana = 1 ;
+    } else {
+        $val = 0;
+        $sqlval = mysqli_query($conn, "UPDATE users SET val='{$val}' WHERE unique_id ='{$unique_id}'");
+    }
+
+
+    if(isset($_POST['checkMC'])){
+        $mc = 1;
+        $sqlmc = mysqli_query($conn, "UPDATE users SET mc='{$mc}' WHERE unique_id ='{$unique_id}'");
+        $checkboxy_zmiana = 1 ;
+    } else {
+        $mc = 0;
+        $sqlmc = mysqli_query($conn, "UPDATE users SET mc='{$mc}' WHERE unique_id ='{$unique_id}'");
+    }
+
+
+    if(isset($_POST['checkHorror'])){
+        $horror = 1;
+        $sqlhorror = mysqli_query($conn, "UPDATE users SET horror='{$horror}' WHERE unique_id ='{$unique_id}'");
+        $checkboxy_zmiana = 1 ;
+    } else {
+        $horror = 0;
+        $sqlhorror = mysqli_query($conn, "UPDATE users SET horror='{$horror}' WHERE unique_id ='{$unique_id}'");
+        
+    }
+
+
+    if(isset($_POST['checkComedy'])){
+        $comedy = 1;
+        $sqlcomedy = mysqli_query($conn, "UPDATE users SET comedy='{$comedy}' WHERE unique_id ='{$unique_id}'");
+        $checkboxy_zmiana = 1 ;
+    } else {
+        $comedy = 0;
+        $sqlcomedy = mysqli_query($conn, "UPDATE users SET comedy='{$comedy}' WHERE unique_id ='{$unique_id}'");
+    }
+
+
+
+    if(isset($_POST['checkCrime'])){
+        $crime = 1;
+        $sqcrimeL = mysqli_query($conn, "UPDATE users SET crime='{$crime}' WHERE unique_id ='{$unique_id}'");
+        $checkboxy_zmiana = 1 ;
+    } else {
+        $crime = 0;
+        $sqcrimeL = mysqli_query($conn, "UPDATE users SET crime='{$crime}' WHERE unique_id ='{$unique_id}'");
+    }
+    if(isset($_POST['checkDrama'])){
+        $drama = 1;
+        $sqldrama = mysqli_query($conn, "UPDATE users SET drama='{$drama}' WHERE unique_id ='{$unique_id}'");
+        $checkboxy_zmiana = 1 ;
+    } else {
+        $drama = 0;
+        $sqldrama = mysqli_query($conn, "UPDATE users SET drama='{$drama}' WHERE unique_id ='{$unique_id}'");
+    }
+    
+    if(isset($_POST['checkTrap'])){
+        $trap = 1;
+        $sqltrap = mysqli_query($conn, "UPDATE users SET trap='{$trap}' WHERE unique_id ='{$unique_id}'");
+        $checkboxy_zmiana = 1 ;
+    } else {
+        $trap = 0;
+        $sqltrap = mysqli_query($conn, "UPDATE users SET trap='{$trap}' WHERE unique_id ='{$unique_id}'");
+    }
+
+    if(isset($_POST['checkRap'])){
+        $rap = 1;
+        $sqlrap = mysqli_query($conn, "UPDATE users SET rap='{$rap}' WHERE unique_id ='{$unique_id}'");
+        $checkboxy_zmiana = 1 ;
+    } else {
+        $rap =0;
+        $sqlrap = mysqli_query($conn, "UPDATE users SET rap='{$rap}' WHERE unique_id ='{$unique_id}'");
+    }
+    if(isset($_POST['checkPop'])){
+        $pop = 1;
+        $sqlpop = mysqli_query($conn, "UPDATE users SET pop='{$pop}' WHERE unique_id ='{$unique_id}'");
+        $checkboxy_zmiana = 1 ;
+    } else {
+        $pop = 0;
+        $sqlpop = mysqli_query($conn, "UPDATE users SET pop='{$pop}' WHERE unique_id ='{$unique_id}'");
+    }
+    if(isset($_POST['checkClassic'])){
+        $classic = 1;
+        $sqlclassic = mysqli_query($conn, "UPDATE users SET classic='{$classic}' WHERE unique_id ='{$unique_id}'");
+        $checkboxy_zmiana = 1 ;
+    } else {
+        $classic = 0;
+        $sqlclassic = mysqli_query($conn, "UPDATE users SET classic='{$classic}' WHERE unique_id ='{$unique_id}'");
+    }
+
+    if ($checkboxy_zmiana === 1){
+        //echo " Preferencje zaaktualizowane";
+    }
 ?>

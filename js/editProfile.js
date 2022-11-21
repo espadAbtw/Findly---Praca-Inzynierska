@@ -15,18 +15,21 @@ editFormBtn.onclick = () => {
         if(xhr.readyState === XMLHttpRequest.DONE){
             if(xhr.status === 200) {
                 let data = xhr.response;
+                let success = "success";
+                let preferencje = " Preferencje zaaktualizowane";
                 console.log(data);
-                if ( data === "success") {
+                if ( data.includes(success)) {
                     console.log("zapisane");
                     //location.href = "editProfile.php";
-                    errorText.textContent = "Pomyslnie zapisano zmiany";
+                    errorText.textContent = "Pomyślnie zapisano zmiany";
                     errorText.style.color = "#008000";
                     errorText.style.backgroundColor = "#90EE90";
                     errorText.style.borderColor = "#90EE90";
                     errorText.style.display = "block";
                 } else if(data === ""){
                     console.log("nic sie nie zmienilo")
-                }else {
+                }
+                 else {
                     errorText.textContent = data;
                     errorText.style.display = "block";
                 }

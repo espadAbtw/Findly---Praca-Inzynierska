@@ -1,18 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+.bodyHidden{
 
+  overflow: hidden;
+}
 body {
-  background: linear-gradient(to right, #1e5799 0%,#7336b9 19%,#127bc2b7 40%,#7d4a8d 60%,#e02cbf 83%,#1e5799 100%); 
-  background-size: 10000px 100%;
-  animation: bg 15s linear infinite ;
-  }
-  @keyframes bg{
-    0%{
-      background-position-x: 0;
-    }
-    
-    100%{
-      background-position-x: 10000px;
-    }
+  background-image: linear-gradient(to right, rgba(14, 14, 15, 0.712), rgba(28, 8, 54, 0.6)), url(../img/back.jpg) !important;
+  /* background-image: url(../img/back.jpg)!important; */
+  background-repeat: no-repeat!important;
+  background-size: 120% 120%!important;
+  -moz-background-size: 120% 120%!important;
+ 
   }
 .regCont {
   
@@ -21,14 +18,22 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 10vh 25vh;
-  background: rgba(255, 255, 255, 0.2);
+ margin-top: 10vh;
+ margin-bottom: 10vh;
+ width: 60%;
+ margin-left: auto;
+ margin-right: auto;
+
+  background: rgba(29, 28, 28, 0.2);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(124, 82, 143, 0.4);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0);
+  border: 1px solid rgba(68, 65, 65, 0.144);
   padding: 10vh 5vh
+}
+@media only screen and (max-width: 388px) {
+  
 }
 .regCont h1 {
   color: #fff;
@@ -42,7 +47,7 @@ body {
   display: block;
   text-decoration: none;
   overflow: hidden;
-    
+  cursor: pointer; 
 }
 .regCont .buttonReg {
   margin-top: 8vh;
@@ -50,6 +55,7 @@ body {
 }
 .regCont a:hover .wave {
   top: -120px;
+  
 }
 .regCont a span {
   position: relative;
@@ -98,19 +104,23 @@ body {
     transform: translate(-50%, -75%) rotate(360deg);
  }
 }
+main .modal-content .modal-header{
+  border-color: rgb(158, 48, 248) !important;
+}
 
 main .modal-content {
-  background: rgba(170, 253, 249, 0.5);
+  background: rgba(38, 78, 163, 0.39);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.6px);
   -webkit-backdrop-filter: blur(6.6px);
-  border: 1px solid rgba(255, 255, 255, 0);
+  border: 1px solid  rgb(158, 48, 248);
   margin-top: 3vh;
   font-family: Montserrat;
 }
 main .modal-content h2 {
   font-weight: bold;
+  color: #fff;
 }
 main .modal-content img {
   margin: 2vh;
@@ -119,6 +129,7 @@ main .modal-content .daneOsobowe {
   margin-top: 3vh;
   font-weight: 400;
   font-size: 18px;
+  color: #fff;
 }
 
 .input-container{
@@ -135,7 +146,7 @@ main .modal-content .daneOsobowe {
 }
 .input-container input{ 
   border:0;
-  border-bottom:1px solid #555;  
+  border-bottom:1px solid rgb(158, 48, 248);  
   background:transparent;
   font-size:16px;
   color:#fff;
@@ -173,8 +184,10 @@ main .modal-content .daneOsobowe {
 	font-size:12px;
 	
 }
+
 main .modal-content .modal-footer
 {
+  border-color: rgb(158, 48, 248);
   display: flex;
   justify-content: center;
 }
@@ -184,7 +197,7 @@ main .modal-content .modal-footer input {
   padding: 1vh;
 }
 main .modal-content .modal-footer input:active {
-  background-color: rgba(86, 170, 138, 0.774);
+  background-color: rgba(255, 255, 255, 0.767);
 }
 /* .signup form .error-txt{
     color: #721c24;
@@ -232,4 +245,15 @@ main .modal-content .modal-footer input:active {
   }
   
 
-  
+  footer {
+    margin-top: 5.3rem;
+    font-family: Montserrat;
+    background-color: #1b1c1e !important;
+  }
+
+  footer ul {
+    margin-right: 20px;
+  }
+  footer .text-muted {
+    margin-left: 20px;
+  }

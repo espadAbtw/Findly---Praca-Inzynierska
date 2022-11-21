@@ -39,7 +39,7 @@
 
                                                 <div class="modal-header text-center">
                                                     
-                                                    <button type="button " class="btn-close" data-bs-dismiss="modal"
+                                                    <button type="button " class="btn-close btn-close-white" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
@@ -74,10 +74,14 @@
                                                                 </div>
                                                                 
                                                             
-                                                            <div class="daneOsobowe">
-                                                                <p>Twoje dane osobowe będą wykorzystywane do obsługi korzystania z tej witryny, zarządzania
-                                                                    dostępem do konta oraz do innych celów opisanych w naszej polityce prywatności.
-                                                                </p>
+                                                            <div class="daneOsobowe d-flex flex-column align-items-center text-center">
+                                                                <div class="daneOsobowe_1 d-flex">
+                                                            <input type="checkbox" class="form-check-input" value="" name="polityka" id="polityka" required>
+                                                                 <label for ="polityka" class="form-check-label"><p> Potwierdzam, że zapoznałem się z <a href="polityka.php">polityką prywatności.</a></p></label></div>
+                                                                 <div class="daneOsobowe_2 d-flex">
+                                                            <input type="checkbox" class="form-check-input" value=""name="regulamin" id="regulamin" required>
+                                                                 <label for ="regulamin" class="form-check-label"><p> Potwierdzam, że zapoznałem się z <a href="regulamin.php">regulaminem strony.</a></p></label></div>
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>
@@ -95,7 +99,21 @@
                         </div>
                     </div>
     </main>
-    <footer></footer>
+    
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
+    <p class="col-md-4 mb-0 text-muted">&copy; 2022 Praca Inżynierska - Mateusz Karaś. All rights reserved.</p>
+
+     
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="polityka.php" class="nav-link px-2 text-muted">Polityka prywatności.</a></li>
+      <li class="nav-item"><a href="regulamin.php" class="nav-link px-2 text-muted">Regulamin</a></li>
+      <li class="nav-item"><a  class="nav-link px-2 text-muted">Kontakt: support@findly.com</a></li>
+      
+    </ul>
+  </footer>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>

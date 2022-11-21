@@ -28,8 +28,8 @@
                     }
                             }
 
-
-                $sql2 = mysqli_query($conn, "INSERT INTO users (unique_id, fname, email, password,  status) VALUES ({$random_id}, '{$fname}', '{$email}', '{$pass}', '{$status}')");
+                $encrypt_pass = md5($pass);           
+                $sql2 = mysqli_query($conn, "INSERT INTO users (unique_id, fname, email, password,  status) VALUES ({$random_id}, '{$fname}', '{$email}', '{$encrypt_pass}', '{$status}')");
                 if($sql2){
                     // if data inserted
                     $sql3 = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
